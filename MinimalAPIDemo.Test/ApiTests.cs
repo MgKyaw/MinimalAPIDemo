@@ -26,7 +26,8 @@ public class ApiTests
 
         var response = await httpClient.GetAsync("sum?n1=10&n2=6");
         var responseString = await response.Content.ReadAsStringAsync();
+        var result = int.Parse(responseString);
 
-        Assert.AreEqual("16", responseString);
+        Assert.AreEqual(16, result);
     }
 }
