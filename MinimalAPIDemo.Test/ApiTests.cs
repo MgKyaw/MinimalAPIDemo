@@ -1,7 +1,7 @@
 ﻿namespace MinimalAPIDemo.Test;
 
 [TestClass]
-public sealed class Test1
+public class ApiTests
 {
     [TestMethod]
     public void TestMethod1()
