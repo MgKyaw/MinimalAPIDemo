@@ -16,4 +16,17 @@ public class ApiTests
 
         Assert.AreEqual("Hello World!", responseString);
     }
+
+
+    [TestMethod]
+    public async Task Sum_Returns16For10And6()
+    {
+        var webApplicationFactory = new WebApplicationFactory<Program>();
+        var httpClient = webApplicationFactory.CreateDefaultClient();
+
+        var response = await httpClient.GetAsync("sum?n1=10&n2=6");
+        var responseString = await response.Content.ReadAsStringAsync();
+
+        Assert.AreEqual("16", responseString);
+    }
 }
